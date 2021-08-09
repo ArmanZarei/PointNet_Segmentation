@@ -6,11 +6,12 @@ from torch.utils.data.dataset import random_split
 import torch
 from model import PointNet, pointnet_loss
 from utils import training_process_plot_save
+import numpy as np
 
 
 # -------------------------------- Dataset & DataLoader -------------------------------- #
 dataset = PointCloudDataset(
-    root_dir='/content', 
+    root_dir='', 
     is_train=False,
     transform=transforms.Compose([
         RandomRotation()
@@ -33,8 +34,8 @@ optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 
 train_loss_arr, val_loss_arr = [], []
 train_accuracy_arr, val_accuracy_arr = [], []
-print(device)
-for epoch in range(3):
+
+for epoch in range(15):
     train_loss, val_loss = .0, .0
     train_acc, val_acc = .0, .0
   

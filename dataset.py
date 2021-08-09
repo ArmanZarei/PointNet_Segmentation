@@ -10,8 +10,8 @@ class PointCloudDataset(Dataset):
         self.transform = transform
         self.files = []
 
-        images_dir = root_dir + '/02691156/points/'
-        categories_dir = root_dir + '/02691156/expert_verified/points_label/'
+        images_dir = root_dir + '02691156/points/'
+        categories_dir = root_dir + '02691156/expert_verified/points_label/'
 
         for f in os.listdir(categories_dir):
             self.files.append({

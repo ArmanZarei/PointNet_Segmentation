@@ -33,8 +33,8 @@ optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 
 train_loss_arr, val_loss_arr = [], []
 train_accuracy_arr, val_accuracy_arr = [], []
-
-for epoch in range(15):
+print(device)
+for epoch in range(3):
     train_loss, val_loss = .0, .0
     train_acc, val_acc = .0, .0
   

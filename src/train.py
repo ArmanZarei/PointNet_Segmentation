@@ -5,6 +5,7 @@ from torchvision import transforms
 from torch.utils.data.dataset import random_split
 import torch
 from model import PointNet, pointnet_loss
+from utils import training_process_plot_save
 
 
 # -------------------------------- Dataset & DataLoader -------------------------------- #
@@ -67,3 +68,4 @@ for epoch in range(15):
 
 
 torch.save(model.state_dict(), 'save.pth')
+training_process_plot_save(train_loss_arr, val_loss_arr, train_accuracy_arr, val_accuracy_arr)

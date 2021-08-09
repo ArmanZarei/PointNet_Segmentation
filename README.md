@@ -45,3 +45,11 @@
         <td>90%</td>
     </tr>
 </table>
+
+## Usage
+- Download the dataset: `make download`
+- Train + Test + Visualization: `make run`
+
+## Resources
+
+...

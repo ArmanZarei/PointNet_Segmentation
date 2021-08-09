@@ -2,6 +2,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
+def train_log(txt, delete_prev=False, file_path="TrainLog.txt"):
+    with open(file_path, 'w' if delete_prev else 'a') as f:
+        f.write(txt + "\n")
+
 def read_pts(file):
     return np.genfromtxt(file)
 

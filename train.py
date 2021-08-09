@@ -5,7 +5,7 @@ from torchvision import transforms
 from torch.utils.data.dataset import random_split
 import torch
 from model import PointNet, pointnet_loss
-from utils import training_process_plot_save
+from utils import train_log, training_process_plot_save
 import numpy as np
 
 
@@ -28,6 +28,8 @@ test_dataloader = DataLoader(test_dataset, batch_size=16)
 
 # -------------------------------- Training -------------------------------- #
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+train_log(f'Device: {device}\n{"-"*30}', delete_prev=True)
+
 model = PointNet().to(device)
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 
@@ -65,7 +67,7 @@ for epoch in range(15):
     train_accuracy_arr.append(train_acc/len(train_dataloader))
     val_accuracy_arr.append(val_acc/len(val_dataloader))
   
-    print(f'Epoch: {"{:2d}".format(epoch)} -> \t Train Loss: {"%.10f"%train_loss_arr[-1]} \t Validation Loss: {"%.10f"%val_loss_arr[-1]} | Train Accuracy: {"%.4f"%train_accuracy_arr[-1]} \t Validation Accuracy: {"%.4f"%val_accuracy_arr[-1]} \t ')
+    train_log(f'Epoch: {"{:2d}".format(epoch)} -> \t Train Loss: {"%.10f"%train_loss_arr[-1]} \t Validation Loss: {"%.10f"%val_loss_arr[-1]} | Train Accuracy: {"%.4f"%train_accuracy_arr[-1]} \t Validation Accuracy: {"%.4f"%val_accuracy_arr[-1]} \t ')
 
 
 torch.save(model.state_dict(), 'save.pth')

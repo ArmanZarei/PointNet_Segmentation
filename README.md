@@ -1,23 +1,7 @@
 # PointNet Segmentation
 
-After training the model for `15` epochs:
-<table style="text-align: center;">
-    <thead>
-        <tr>
-            <th>Train Set</th>
-            <th>Validation Set</th>
-            <th>Test Set</th>
-        </tr>
-    </thead>
-    <tr>
-        <td>91%</td>
-        <td>90%</td>
-        <td>90%</td>
-    </tr>
-</table>
-
-![Training Process](images/training.png)
-
+## Results
+### Examples from Test Set
 <table>
     <thead>
         <tr>
@@ -40,5 +24,24 @@ After training the model for `15` epochs:
         <td><img src='images/labeled_2.gif'></td>
         <td><img src='images/predicted_2.gif'></td>
         <td><img src='images/diff_2.gif'></td>
+    </tr>
+</table>
+
+### Training Process
+![Training Process](images/training.png)
+
+### Accuracy
+<table style="text-align: center;">
+    <thead>
+        <tr>
+            <th>Train Set</th>
+            <th>Validation Set</th>
+            <th>Test Set</th>
+        </tr>
+    </thead>
+    <tr>
+        <td>91%</td>
+        <td>90%</td>
+        <td>90%</td>
     </tr>
 </table>

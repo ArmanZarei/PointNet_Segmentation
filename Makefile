@@ -1,9 +1,9 @@
 help:
 	@echo 'download: downloads the dataset'
-	@echo 'train: runs train.py to train the model'
+	@echo 'run: runs main.py: Train + Test + Visualize'
 
 download:
 	sh download.sh
 
-train:
-	python3 -W ignore train.py
+run:
+	python3 -W ignore main.py

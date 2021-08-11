@@ -1,4 +1,4 @@
-# PointNet Segmentation
+# PointNet Segmentation - PyTorch Implementation
 
 ## Results
 ### Examples from Test Set
